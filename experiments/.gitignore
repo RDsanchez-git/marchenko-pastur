@@ -1,0 +1,5 @@
+# Ignorar basura de experimentos
+outputs/*
+data/*
+!outputs/.gitkeep
+!data/.gitkeep

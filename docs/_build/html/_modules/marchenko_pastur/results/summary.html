@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>marchenko_pastur.results.summary &#8212; marchenko_pastur v0.1.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/marchenko_pastur/results/summary';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">marchenko_pastur v0.1.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api/reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev/docstring_guide.html">
+    Documentation Standards (Scientific Python)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev/experiment_guidelines.html">
+    Experimentation Guidelines
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Docstring Standard
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api/reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev/docstring_guide.html">
+    Documentation Standards (Scientific Python)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev/experiment_guidelines.html">
+    Experimentation Guidelines
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Docstring Standard
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">marchenko_pastur.results.summary</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for marchenko_pastur.results.summary</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Summary rendering utilities for Marchenko-Pastur inference results.</span>
+
+<span class="sd">This module provides a high-level, state-aware interface for formatting</span>
+<span class="sd">and interpreting the output of MP-based spectral analysis. It transforms</span>
+<span class="sd">raw statistical results into structured, human-readable diagnostics in</span>
+<span class="sd">both text and HTML formats.</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">**Role in the Architecture**</span>
+
+<span class="sd">- Acts as the presentation layer of the MP pipeline.</span>
+<span class="sd">- Consumes ``MPResult`` objects and produces interpretative summaries.</span>
+<span class="sd">- Fully decoupled from computation (no numerical estimation performed).</span>
+
+<span class="sd">**Key Features**</span>
+
+<span class="sd">- State-aware diagnostics (OK / WARNING / CRITICAL regimes).</span>
+<span class="sd">- Structured decomposition of spectral properties (bulk, spikes, inference).</span>
+<span class="sd">- Support for both terminal output and rich HTML (Jupyter-friendly).</span>
+<span class="sd">- Adaptive truncation of weak factors for readability.</span>
+
+<span class="sd">**Design Principles**</span>
+
+<span class="sd">- Separation of concerns: computation vs. interpretation.</span>
+<span class="sd">- Interpretability-first: emphasizes economic meaning of spectral structure.</span>
+<span class="sd">- Robustness: gracefully handles model breakdown and edge cases.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># ======================================================================</span>
+<span class="c1"># STANDARD LIBRARY IMPORTS</span>
+<span class="c1"># ======================================================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">html</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="c1"># ======================================================================</span>
+<span class="c1"># THIRD-PARTY IMPORTS</span>
+<span class="c1"># ======================================================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">marchenko_pastur.enums.enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">CovarianceMethod</span><span class="p">,</span> <span class="n">ThresholdMethod</span>
+
+<span class="c1"># ======================================================================</span>
+<span class="c1"># LOCAL IMPORTS</span>
+<span class="c1"># ======================================================================</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_table</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.results</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPResult</span>
+
+<span class="c1"># ======================================================================</span>
+<span class="c1"># PUBLIC API EXPORTS</span>
+<span class="c1"># ======================================================================</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Summary&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="c1"># ======================================================================</span>
+<span class="c1"># CLASSES</span>
+<span class="c1"># ======================================================================</span>
+<div class="viewcode-block" id="Summary">
+<a class="viewcode-back" href="../../../api/generated/marchenko_pastur.results.summary.Summary.html#marchenko_pastur.results.summary.Summary">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Summary</span><span class="p">:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    High-level formatter for Marchenko-Pastur inference results.</span>
+
+<span class="sd">    This class provides a structured and interpretable representation of</span>
+<span class="sd">    spectral analysis outputs. It organizes model diagnostics into coherent</span>
+<span class="sd">    sections, including noise structure, signal strength, spike decomposition,</span>
+<span class="sd">    and statistical inference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    result : MPResult</span>
+<span class="sd">        Object containing the results of MP spectral analysis.</span>
+<span class="sd">    max_display : int, default=15</span>
+<span class="sd">        Maximum number of factors (spikes) to display in the summary output.</span>
+<span class="sd">        Weak factors beyond this limit may be truncated for readability.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    **Conceptual Role**</span>
+
+<span class="sd">    - Bridges the gap between raw statistical output and economic interpretation.</span>
+<span class="sd">    - Provides a &quot;model summary&quot; analogous to regression outputs in econometrics.</span>
+
+<span class="sd">    **State-Aware Diagnostics**</span>
+
+<span class="sd">    The summary adapts its interpretation based on an internal collapse state:</span>
+
+<span class="sd">    - ``OK``: Clear signal/noise separation.</span>
+<span class="sd">    - ``WARNING``: Moderate overlap or elevated spike density.</span>
+<span class="sd">    - ``CRITICAL``: Model breakdown (variance collapse or over-detection).</span>
+
+<span class="sd">    **Output Modes**</span>
+
+<span class="sd">    - ``as_text()``: Plain-text summary for terminal use.</span>
+<span class="sd">    - ``as_html()``: Rich HTML representation (Jupyter/IPython).</span>
+<span class="sd">    - ``_repr_html_()``: Automatic rendering in notebook environments.</span>
+
+<span class="sd">    **Performance Consideration**</span>
+
+<span class="sd">    All expensive computations (e.g., gap statistics) are precomputed at</span>
+<span class="sd">    initialization to ensure efficient repeated rendering.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Summary.__init__">
+<a class="viewcode-back" href="../../../api/generated/marchenko_pastur.results.summary.Summary.html#marchenko_pastur.results.summary.Summary.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="s2">&quot;MPResult&quot;</span><span class="p">,</span> <span class="n">max_display</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">15</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_display</span> <span class="o">=</span> <span class="n">max_display</span>  <span class="c1"># Control centralizado de UI</span>
+
+        <span class="c1"># 1. Pre-compute spectral geometry (DRY)</span>
+        <span class="n">max_rank</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">p</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spike_ratio</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">/</span> <span class="n">max_rank</span> <span class="k">if</span> <span class="n">max_rank</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="c1"># SOTA FIX: Strict Type Narrowing for Optional array</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">result</span><span class="o">.</span><span class="n">deltas</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">deltas</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_abs_gap</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">deltas</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_norm_gap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abs_gap</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">lambda_plus</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_abs_gap</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_norm_gap</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># 2. Centralized diagnostics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_collapse_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate_collapse_state</span><span class="p">()</span></div>
+
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># STATE PROPAGATION (CORE DIAGNOSTIC)</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_evaluate_collapse_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Determine the structural stability of the spectral model.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            One of {&quot;OK&quot;, &quot;WARNING&quot;, &quot;CRITICAL&quot;} depending on signal density,</span>
+<span class="sd">            spectral gaps, and backend warnings.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Combines:</span>
+<span class="sd">        - Backend warnings (explicit model failures).</span>
+<span class="sd">        - Spike density heuristics.</span>
+<span class="sd">        - Gap-based structural diagnostics.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+
+        <span class="c1"># Use structural contract instead of string parsing</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;robust_fallback_used&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;CRITICAL&quot;</span>
+
+        <span class="c1"># Stabilized structural heuristics</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spike_ratio</span> <span class="o">&gt;</span> <span class="mf">0.30</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;CRITICAL&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spike_ratio</span> <span class="o">&gt;</span> <span class="mf">0.15</span><span class="p">:</span>
+            <span class="c1"># Dual condition: relative AND absolute collapse</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_norm_gap</span> <span class="o">&lt;</span> <span class="mf">1.0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abs_gap</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;CRITICAL&quot;</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_norm_gap</span> <span class="o">&lt;</span> <span class="mf">2.0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;WARNING&quot;</span>
+
+        <span class="k">return</span> <span class="s2">&quot;OK&quot;</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># PUBLIC API &amp; MAGIC METHODS</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_text</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;MPResult Summary: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">k_effective</span><span class="si">}</span><span class="s2"> spikes detected. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Regime: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">regime</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">as_text</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a full text-based summary of the MP analysis.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            A formatted multi-section string containing model configuration,</span>
+<span class="sd">            noise structure, signal diagnostics, spike decomposition, inference,</span>
+<span class="sd">            warnings, and execution metadata.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">------------------------------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="c1"># NOTE: Conscious UI/Core coupling in Summary (v0.1.0 pragmatism).</span>
+        <span class="c1"># Branding is intentionally embedded in the text output as part of the</span>
+        <span class="c1"># presentation contract. This avoids premature API complexity (e.g. flags</span>
+        <span class="c1"># like include_header). Revisit only if multiple output modes are required.</span>
+        <span class="n">branding</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;MARCHENKO-PASTUR SPECTRAL ANALYSIS</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;==================================&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">sections</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">branding</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_header</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_bulk</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_spikes</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_signal_strength</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_inference</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_verdict</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_warnings</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_build_footer</span><span class="p">(),</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sections</span> <span class="k">if</span> <span class="n">s</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">as_html</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate an HTML-rendered version of the summary.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            HTML string with preformatted text styling suitable for display</span>
+<span class="sd">            in Jupyter notebooks or web interfaces.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">content</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">as_text</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="s2">&quot;&lt;div style=&#39;font-family: monospace; white-space: pre; &quot;</span>
+            <span class="s2">&quot;background-color: #f8f9fa; padding: 15px; border-radius: 5px; &quot;</span>
+            <span class="s2">&quot;border: 1px solid #dee2e6;&#39;&gt;&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&lt;/div&gt;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Jupyter/IPython rich display hook.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            HTML representation of the summary for automatic rendering in</span>
+<span class="sd">            notebook environments.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_html</span><span class="p">()</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># CORE FORMATTER</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_kv_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Format a block of key-value pairs into aligned text.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        title : str</span>
+<span class="sd">            Section title.</span>
+<span class="sd">        items : list of (str, str)</span>
+<span class="sd">            Key-value pairs to display.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted multi-line string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">items</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">title</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">items</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">title</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s2">: </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># HEADER &amp; BULK</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct the data and configuration section of the summary.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted header block with dataset dimensions, model configuration,</span>
+<span class="sd">            and estimation settings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;Observations (n)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">n</span><span class="p">)),</span>
+            <span class="p">(</span><span class="s2">&quot;Features (p)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">p</span><span class="p">)),</span>
+            <span class="p">(</span><span class="s2">&quot;q = p/n&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">q</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Regime&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">regime</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()),</span>
+            <span class="p">(</span><span class="s2">&quot;Zero Mass&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">zero_mass</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Covariance&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">covariance_method</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Threshold Method&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">threshold_method</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;MP Sigma Estimator&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">mp_sigma_estimator</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Standardized&quot;</span><span class="p">,</span> <span class="s2">&quot;Yes (Correlation)&quot;</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">standardize_data</span> <span class="k">else</span> <span class="s2">&quot;No (Covariance)&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">covariance_method</span> <span class="ow">is</span> <span class="n">CovarianceMethod</span><span class="o">.</span><span class="n">SHRINKAGE</span><span class="p">:</span>
+            <span class="n">shrink_name</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">shrinkage_method</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">shrinkage_method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;Unknown&quot;</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;Shrinkage&quot;</span><span class="p">,</span> <span class="n">shrink_name</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">alpha</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;Alpha&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">alpha</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">threshold_method</span> <span class="ow">is</span> <span class="n">ThresholdMethod</span><span class="o">.</span><span class="n">BOOTSTRAP</span><span class="p">:</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;Bootstrap Samples (B)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">bootstrap_samples</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">random_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;Random State&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">random_state</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">regime</span> <span class="o">==</span> <span class="s2">&quot;singular&quot;</span><span class="p">:</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;Note&quot;</span><span class="p">,</span> <span class="s2">&quot;High-dimensional regime (p &gt; n) — zero eigenvalues expected&quot;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kv_block</span><span class="p">(</span><span class="s2">&quot;DATA &amp; CONFIGURATION&quot;</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kv_block</span><span class="p">(</span><span class="s2">&quot;DATA &amp; CONFIGURATION&quot;</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_bulk</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct the noise model (bulk) configuration section.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted block detailing MP theoretical limits and variance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;Lower Edge (λ-)&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">lambda_minus</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Noise Edge (λ+)&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">lambda_plus</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Bulk Width&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">bulk_width</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Variance (σ²)&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">sigma2_hat</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kv_block</span><span class="p">(</span><span class="s2">&quot;BULK (NOISE MODEL: MARCHENKO-PASTUR FIT)&quot;</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># SIGNAL STRENGTH (STATE-AWARE)</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_signal_strength</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct the signal strength diagnostics section.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted block with Signal-to-Noise Ratio (SNR) and gap metrics.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collapse_state</span> <span class="o">==</span> <span class="s2">&quot;CRITICAL&quot;</span><span class="p">:</span>
+            <span class="n">snr_val</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">snr</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (invalid under model breakdown)&quot;</span>
+            <span class="n">snr_interp</span> <span class="o">=</span> <span class="s2">&quot;Unreliable (model breakdown)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">snr_val</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">snr</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">snr</span> <span class="o">&gt;</span> <span class="mf">2.0</span><span class="p">:</span>
+                <span class="n">snr_interp</span> <span class="o">=</span> <span class="s2">&quot;High signal&quot;</span>
+            <span class="k">elif</span> <span class="n">r</span><span class="o">.</span><span class="n">snr</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="n">snr_interp</span> <span class="o">=</span> <span class="s2">&quot;Moderate signal&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">snr_interp</span> <span class="o">=</span> <span class="s2">&quot;Noise-dominated&quot;</span>
+
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">ratio_apex</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="n">apex_label</span> <span class="o">=</span> <span class="s2">&quot;Dominant spike&quot;</span>
+        <span class="k">elif</span> <span class="n">r</span><span class="o">.</span><span class="n">ratio_apex</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">apex_label</span> <span class="o">=</span> <span class="s2">&quot;Strong dominance&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">apex_label</span> <span class="o">=</span> <span class="s2">&quot;Balanced spectrum&quot;</span>
+
+        <span class="c1"># Strict Type Narrowing before NumPy operations</span>
+        <span class="n">has_signal</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">deltas</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">deltas</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">mean_gap_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">deltas</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">has_signal</span> <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">deltas</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;N/A&quot;</span>
+        <span class="n">max_gap_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">deltas</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">has_signal</span> <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">deltas</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;N/A&quot;</span>
+
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;Effective Rank (k)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">k_effective</span><span class="p">)),</span>
+            <span class="p">(</span><span class="s2">&quot;SNR&quot;</span><span class="p">,</span> <span class="n">snr_val</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;SNR Regime&quot;</span><span class="p">,</span> <span class="n">snr_interp</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Apex Ratio&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">ratio_apex</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">apex_label</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Mean Gap (Δ)&quot;</span><span class="p">,</span> <span class="n">mean_gap_str</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Max Gap (Δ)&quot;</span><span class="p">,</span> <span class="n">max_gap_str</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;Interpretation&quot;</span><span class="p">,</span> <span class="s2">&quot;No detectable signal&quot;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kv_block</span><span class="p">(</span><span class="s2">&quot;SIGNAL STRENGTH &amp; SEPARATION&quot;</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># SPIKES (STATE-AWARE)</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_spikes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct the spike decomposition table.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Table summarizing detected factors, including sample eigenvalues,</span>
+<span class="sd">            population estimates, bias, statistical strength, and stability.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Applies adaptive truncation for weak factors based on ``max_display``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">threshold_method</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;SPIKE DECOMPOSITION (BBP + </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> INFERENCE)&quot;</span>
+
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">spikes_sample</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">  No significant factors detected.</span><span class="se">\n</span><span class="s2">  Spectrum consistent with noise.&quot;</span>
+
+        <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">spikes_sample</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">spikes</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">spikes_sample</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
+        <span class="n">pops</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">population_eigenvalues</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
+
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">shown</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">spikes</span><span class="p">,</span> <span class="n">pops</span><span class="p">)):</span>
+            <span class="n">abs_gap</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">r</span><span class="o">.</span><span class="n">spike_threshold</span>
+            <span class="n">rel_gap</span> <span class="o">=</span> <span class="n">abs_gap</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">spike_threshold</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">)</span>
+
+            <span class="c1"># Pure geometric classification (decoupled from global state)</span>
+            <span class="k">if</span> <span class="n">rel_gap</span> <span class="o">&gt;</span> <span class="mf">2.0</span> <span class="ow">or</span> <span class="n">abs_gap</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="n">strength</span> <span class="o">=</span> <span class="s2">&quot;Strong&quot;</span>
+            <span class="k">elif</span> <span class="n">rel_gap</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="ow">or</span> <span class="n">abs_gap</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
+                <span class="n">strength</span> <span class="o">=</span> <span class="s2">&quot;Moderate&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">strength</span> <span class="o">=</span> <span class="s2">&quot;Weak&quot;</span>
+
+            <span class="c1"># Only legitimate and strong signal bypasses visual truncation</span>
+            <span class="k">if</span> <span class="n">strength</span> <span class="o">!=</span> <span class="s2">&quot;Strong&quot;</span> <span class="ow">and</span> <span class="n">shown</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_display</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">shown</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">bias</span> <span class="o">=</span> <span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;nan&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">bootstrap_distribution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">b_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">bootstrap_distribution</span><span class="p">)</span>
+                <span class="n">pval_raw</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">bootstrap_distribution</span> <span class="o">&gt;=</span> <span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">b_samples</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">pval_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pval_raw</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pval_str</span> <span class="o">=</span> <span class="s2">&quot;—&quot;</span>
+
+            <span class="k">if</span> <span class="n">rel_gap</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="n">stability</span> <span class="o">=</span> <span class="s2">&quot;High&quot;</span>
+            <span class="k">elif</span> <span class="n">rel_gap</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
+                <span class="n">stability</span> <span class="o">=</span> <span class="s2">&quot;Medium&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stability</span> <span class="o">=</span> <span class="s2">&quot;Low&quot;</span>
+
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="sa">f</span><span class="s2">&quot;F</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bias</span><span class="si">:</span><span class="s2">+.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span>
+                    <span class="n">strength</span><span class="p">,</span>
+                    <span class="n">pval_str</span><span class="p">,</span>
+                    <span class="n">stability</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+
+        <span class="n">table</span> <span class="o">=</span> <span class="n">format_table</span><span class="p">(</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;Factor&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;λ_sample&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;λ_population&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Bias&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Strength&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;p-value*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Stability&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span>
+            <span class="n">col_sep</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">footer_notes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Note: &#39;Bias&#39; reflects BBP shrinkage correction (sample → population).&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">bootstrap_distribution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">footer_notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Note: p-values are empirical (bootstrap λ_max proxy).&quot;</span><span class="p">)</span>
+
+        <span class="n">hidden</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">-</span> <span class="n">shown</span>
+        <span class="k">if</span> <span class="n">hidden</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">footer_notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;... (</span><span class="si">{</span><span class="n">hidden</span><span class="si">}</span><span class="s2"> additional weak factors omitted for clarity)&quot;</span><span class="p">)</span>
+
+        <span class="n">note_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">footer_notes</span><span class="p">)</span> <span class="k">if</span> <span class="n">footer_notes</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">table</span><span class="si">}{</span><span class="n">note_str</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># INFERENCE</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_inference</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct the inference methodology section.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted block detailing the threshold rule applied (MP, TW, Bootstrap).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">threshold_method</span> <span class="ow">is</span> <span class="n">ThresholdMethod</span><span class="o">.</span><span class="n">MP</span><span class="p">:</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span> <span class="s2">&quot;λ &gt; λ+ ⇒ signal&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;λ+&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">lambda_plus</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)]</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;INFERENCE: MARCHENKO-PASTUR&quot;</span>
+        <span class="k">elif</span> <span class="n">r</span><span class="o">.</span><span class="n">threshold_method</span> <span class="ow">is</span> <span class="n">ThresholdMethod</span><span class="o">.</span><span class="n">TW</span><span class="p">:</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Alpha&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">alpha</span><span class="p">)),</span> <span class="p">(</span><span class="s2">&quot;Threshold&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">spike_threshold</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)]</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;INFERENCE: TRACY-WIDOM&quot;</span>
+        <span class="k">elif</span> <span class="n">r</span><span class="o">.</span><span class="n">threshold_method</span> <span class="ow">is</span> <span class="n">ThresholdMethod</span><span class="o">.</span><span class="n">BOOTSTRAP</span><span class="p">:</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="s2">&quot;Samples (B)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">bootstrap_samples</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s2">&quot;Alpha&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">alpha</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s2">&quot;Threshold&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">spike_threshold</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">bootstrap_distribution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dist</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">bootstrap_distribution</span>
+                <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="p">(</span><span class="s2">&quot;Mean λ_max&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s2">&quot;Std λ_max&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s2">&quot;P95 λ_max&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s2">&quot;P99 λ_max&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s2">&quot;Interpretation&quot;</span><span class="p">,</span> <span class="s2">&quot;Empirical null distribution of λ_max under noise&quot;</span><span class="p">),</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;INFERENCE: BOOTSTRAP&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kv_block</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># VERDICT (STATE-AWARE)</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_verdict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the final interpretative verdict.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Human-readable conclusion summarizing the presence and reliability</span>
+<span class="sd">            of detected factors based on the internal state.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="n">k_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">k_effective</span><span class="si">}</span><span class="s2"> factor(s) detected.&quot;</span>
+
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_display</span><span class="p">:</span>
+            <span class="n">k_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">k_effective</span><span class="si">}</span><span class="s2"> factor(s) detected (display limit applied).&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collapse_state</span> <span class="o">==</span> <span class="s2">&quot;CRITICAL&quot;</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;Model breakdown (variance collapse).&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Results are statistically unreliable.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;See WARNINGS for required actions.&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collapse_state</span> <span class="o">==</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="n">k_str</span><span class="p">,</span> <span class="s2">&quot;Elevated density. Interpret separation with caution.&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">r</span><span class="o">.</span><span class="n">k_effective</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;No significant structure detected.&quot;</span><span class="p">,</span> <span class="s2">&quot;Spectrum consistent with noise.&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="n">k_str</span><span class="p">,</span> <span class="s2">&quot;Clear separation from noise.&quot;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="s2">&quot;SPECTRAL VERDICT</span><span class="se">\n</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># WARNINGS (STATE-AWARE &amp; DRY)</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_warnings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate warnings associated with the spectral analysis.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted string of structural or backend warnings, or an empty</span>
+<span class="sd">            string if no warnings were triggered.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># 1. Context injection via structural contract</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;robust_fallback_used&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="s2">&quot;  ⚠ [WARNING] MP instability detected during estimation &quot;</span>
+                <span class="s2">&quot;(robust fallback applied).&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># 2. Drain warnings queue (no &#39;else&#39; to prevent shadowing)</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">warnings</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">warnings</span><span class="p">:</span>
+                <span class="n">w_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+                <span class="c1"># Aesthetic filter to prevent printing the raw native warning if already explained</span>
+                <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;robust_fallback_used&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;breakdown&quot;</span> <span class="ow">in</span> <span class="n">w_str</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="k">continue</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ⚠ [WARNING] </span><span class="si">{</span><span class="n">w_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collapse_state</span> <span class="o">==</span> <span class="s2">&quot;CRITICAL&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spike_ratio</span> <span class="o">&gt;</span> <span class="mf">0.15</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;  ⚠ [CRITICAL] Severe over-detection (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_spike_ratio</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> of spectrum).&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;  ⚠ [CRITICAL] Base model breakdown detected.&quot;</span><span class="p">)</span>
+
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;    -&gt; Variance collapse is mathematically likely.&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;    -&gt; ACTION: Use `defactored_mp` (mandatory).&quot;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collapse_state</span> <span class="o">==</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ⚠ [WARNING] Elevated spike density (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_spike_ratio</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;    -&gt; Signal/noise separation is moderate.&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;    -&gt; Results should be interpreted with caution.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;WARNINGS (ATTENTION REQUIRED)</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+    <span class="c1"># ==================================================</span>
+    <span class="c1"># FOOTER</span>
+    <span class="c1"># ==================================================</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_footer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct the execution metadata section.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            Formatted block with timestamp, execution time, and model version.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)),</span>
+            <span class="p">(</span><span class="s2">&quot;Execution Time (s)&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">execution_time_sec</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Model Version&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">model_version</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Config Hash&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">config_hash</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kv_block</span><span class="p">(</span><span class="s2">&quot;EXECUTION METADATA&quot;</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

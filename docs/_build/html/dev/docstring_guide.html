@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Documentation Standards (Scientific Python) &#8212; marchenko_pastur v0.1.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dev/docstring_guide';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Experimentation Guidelines" href="experiment_guidelines.html" />
+    <link rel="prev" title="marchenko_pastur.visualization.plot_spectral_fit.plot_spectral_fit" href="../api/generated/marchenko_pastur.visualization.plot_spectral_fit.plot_spectral_fit.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">marchenko_pastur v0.1.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Documentation Standards (Scientific Python)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="experiment_guidelines.html">
+    Experimentation Guidelines
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Docstring Standard
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Documentation Standards (Scientific Python)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="experiment_guidelines.html">
+    Experimentation Guidelines
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Docstring Standard
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Documentation Standards (Scientific Python)</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="documentation-standards-scientific-python">
+<h1>Documentation Standards (Scientific Python)<a class="headerlink" href="#documentation-standards-scientific-python" title="Link to this heading">#</a></h1>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
+<p>This document defines the official documentation standards for this repository.</p>
+<p>The goal is to ensure:</p>
+<ul class="simple">
+<li><p>Scientific rigor</p></li>
+<li><p>Consistency across modules</p></li>
+<li><p>Compatibility with NumPyDoc and Sphinx</p></li>
+<li><p>Readability for both researchers and engineers</p></li>
+<li><p>Actionable documentation (theory → decisions)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="general-principles">
+<h2>General Principles<a class="headerlink" href="#general-principles" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Docstrings are the contract of the API</strong></p></li>
+<li><p><strong>If an algorithm comes from a paper → it must be cited</strong></p></li>
+<li><p><strong>Clarity &gt; verbosity</strong></p></li>
+<li><p><strong>Consistency is mandatory</strong></p></li>
+<li><p><strong>Not all functions deserve full documentation</strong></p></li>
+<li><p><strong>Document decisions, not just parameters</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="language-convention">
+<h2>Language Convention<a class="headerlink" href="#language-convention" title="Link to this heading">#</a></h2>
+<p>All documentation must be written in <strong>English</strong>.</p>
+<ul class="simple">
+<li><p>Code: English</p></li>
+<li><p>Docstrings: English</p></li>
+<li><p>Comments: English</p></li>
+<li><p>Errors &amp; warnings: English</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="docstring-standard-numpydoc">
+<h2>Docstring Standard (NumPyDoc)<a class="headerlink" href="#docstring-standard-numpydoc" title="Link to this heading">#</a></h2>
+<p>All docstrings must follow the NumPyDoc format.</p>
+<section id="required-sections">
+<h3>Required Sections<a class="headerlink" href="#required-sections" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Summary</p></li>
+<li><p>Parameters</p></li>
+<li><p>Returns</p></li>
+</ul>
+</section>
+<section id="optional-sections">
+<h3>Optional Sections<a class="headerlink" href="#optional-sections" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Raises</p></li>
+<li><p>Notes</p></li>
+<li><p>See Also</p></li>
+<li><p>References</p></li>
+<li><p>Examples</p></li>
+</ul>
+<p>⚠️ Only these section headers are allowed at top level.
+All custom structure must live inside <strong>Notes</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="scientific-documentation-philosophy">
+<h2>Scientific Documentation Philosophy<a class="headerlink" href="#scientific-documentation-philosophy" title="Link to this heading">#</a></h2>
+<p>This repository follows:</p>
+<blockquote>
+<div><p>“Readable code is good.
+Reproducible science is better.
+Actionable theory is best.”</p>
+</div></blockquote>
+<p>This means:</p>
+<p>✔ Explain theory
+✔ Explain when theory breaks
+✔ Explain what to do when it breaks</p>
+</section>
+<hr class="docutils" />
+<section id="mandatory-conventions-sota">
+<h2>🔬 Mandatory Conventions (SOTA)<a class="headerlink" href="#mandatory-conventions-sota" title="Link to this heading">#</a></h2>
+<section id="raw-strings-required">
+<h3>1. Raw Strings (REQUIRED)<a class="headerlink" href="#raw-strings-required" title="Link to this heading">#</a></h3>
+<p>All scientific docstrings MUST use raw strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This prevents escaping issues and ensures LaTeX renders correctly.</p>
+</section>
+<hr class="docutils" />
+<section id="math-rendering-required">
+<h3>2. Math Rendering (REQUIRED)<a class="headerlink" href="#math-rendering-required" title="Link to this heading">#</a></h3>
+<p>All mathematical expressions must use Sphinx MathJax:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">math</span><span class="p">::</span>
+    \lambda_+ = \sigma^2 (1 + \sqrt{q})^2
+</pre></div>
+</div>
+<p>❌ Forbidden:</p>
+<ul class="simple">
+<li><p>Unicode math (λ, σ², √)</p></li>
+<li><p>Inline hacks</p></li>
+</ul>
+<p>✔ Only LaTeX via <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">math::</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="actionable-theory-critical">
+<h3>3. Actionable Theory (CRITICAL)<a class="headerlink" href="#actionable-theory-critical" title="Link to this heading">#</a></h3>
+<p>Theoretical assumptions MUST be tied to user decisions.</p>
+<p>❌ Bad:</p>
+<ul class="simple">
+<li><p>Finite fourth moments required</p></li>
+</ul>
+<p>✔ Good:</p>
+<ul class="simple">
+<li><p>Finite fourth moments required. If violated, use <code class="docutils literal notranslate"><span class="pre">covariance='tyler'</span></code>.</p></li>
+</ul>
+<p>👉 Every limitation must include a mitigation path if available.</p>
+</section>
+<hr class="docutils" />
+<section id="failure-modes-with-mitigation-mandatory">
+<h3>4. Failure Modes with Mitigation (MANDATORY)<a class="headerlink" href="#failure-modes-with-mitigation-mandatory" title="Link to this heading">#</a></h3>
+<p>All core functions MUST include <strong>Failure Modes</strong>.</p>
+<p>Each failure mode must include:</p>
+<ul class="simple">
+<li><p>Cause</p></li>
+<li><p>Effect</p></li>
+<li><p>Mitigation</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**Failure Modes**
+
+Statistical:
+
+- Heavy-tailed data violates MP assumptions.
+  Mitigation: use ``covariance=&#39;tyler&#39;``.
+
+Numerical:
+
+- Perfect multicollinearity causes rank deficiency.
+  Mitigation: use ``defactored_mp``.
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="deterministic-examples-ci-cd-safe">
+<h3>5. Deterministic Examples (CI/CD SAFE)<a class="headerlink" href="#deterministic-examples-ci-cd-safe" title="Link to this heading">#</a></h3>
+<p>All examples MUST:</p>
+<ul class="simple">
+<li><p>Be executable</p></li>
+<li><p>Be deterministic</p></li>
+<li><p>Reflect correct theoretical behavior</p></li>
+</ul>
+<p>✔ Use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>❌ Never hardcode incorrect outputs</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="full-template-core-functions">
+<h2>📄 FULL TEMPLATE (CORE FUNCTIONS)<a class="headerlink" href="#full-template-core-functions" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">X</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    One-line summary.</span>
+
+<span class="sd">    Extended description explaining what the function does.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : ndarray of shape (n_samples, n_features)</span>
+<span class="sd">        Description.</span>
+
+<span class="sd">    q : float</span>
+<span class="sd">        Description.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    result : float</span>
+<span class="sd">        Description.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If inputs are invalid.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Brief explanation of context.</span>
+
+<span class="sd">    **Theory**</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">        \lambda_+ = \sigma^2 (1 + \sqrt{q})^2</span>
+
+<span class="sd">    **Assumptions**</span>
+
+<span class="sd">    - i.i.d observations</span>
+<span class="sd">    - Finite fourth moments. If violated, use ``covariance=&#39;tyler&#39;``</span>
+<span class="sd">    - High-dimensional regime (p/n not negligible)</span>
+
+<span class="sd">    **Algorithm**</span>
+
+<span class="sd">    1. Standardize data</span>
+<span class="sd">    2. Estimate covariance</span>
+<span class="sd">    3. Compute eigenvalues</span>
+<span class="sd">    4. Fit MP law</span>
+
+<span class="sd">    **Interpretation**</span>
+
+<span class="sd">    - Eigenvalues above threshold → signal</span>
+<span class="sd">    - Eigenvalues below → noise</span>
+
+<span class="sd">    **Failure Modes**</span>
+
+<span class="sd">    Statistical:</span>
+
+<span class="sd">    - Heavy-tailed distributions violate assumptions</span>
+<span class="sd">      Mitigation: use ``covariance=&#39;tyler&#39;``</span>
+
+<span class="sd">    Numerical:</span>
+
+<span class="sd">    - Perfect multicollinearity → rank deficiency</span>
+<span class="sd">      Mitigation: use ``defactored_mp``</span>
+
+<span class="sd">    **Complexity**</span>
+
+<span class="sd">    - Time: O(p^3)</span>
+<span class="sd">    - Memory: O(p^2)</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    related_function</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Author (Year). Paper title.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; np.random.seed(42)</span>
+<span class="sd">    &gt;&gt;&gt; X = np.random.randn(100, 50)</span>
+<span class="sd">    &gt;&gt;&gt; function_name(X, q=0.5)</span>
+<span class="sd">    0.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="documentation-levels">
+<h2>Documentation Levels<a class="headerlink" href="#documentation-levels" title="Link to this heading">#</a></h2>
+<section id="core-algorithms-max-detail">
+<h3>1. Core Algorithms (MAX DETAIL)<a class="headerlink" href="#core-algorithms-max-detail" title="Link to this heading">#</a></h3>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>run_mp</p></li>
+<li><p>fit_mp</p></li>
+<li><p>tracy_widom_threshold</p></li>
+</ul>
+<p>✔ Full template required
+✔ Theory (MathJax) required
+✔ Failure Modes required
+✔ References required
+✔ Actionable mitigation required</p>
+</section>
+<hr class="docutils" />
+<section id="public-api-medium-detail">
+<h3>2. Public API (MEDIUM DETAIL)<a class="headerlink" href="#public-api-medium-detail" title="Link to this heading">#</a></h3>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>defactored_mp</p></li>
+<li><p>summary classes</p></li>
+</ul>
+<p>✔ Focus on behavior
+✔ Minimal theory
+✔ Include guidance if misuse is likely</p>
+</section>
+<hr class="docutils" />
+<section id="helpers-utilities-minimal">
+<h3>3. Helpers / Utilities (MINIMAL)<a class="headerlink" href="#helpers-utilities-minimal" title="Link to this heading">#</a></h3>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>standardize</p></li>
+<li><p>internal helpers</p></li>
+</ul>
+<p>✔ Only:</p>
+<ul class="simple">
+<li><p>Summary</p></li>
+<li><p>Parameters</p></li>
+<li><p>Returns</p></li>
+</ul>
+<p>❌ No theory
+❌ No references
+❌ No failure modes</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="see-also-mandatory-for-core">
+<h2>🔗 See Also (MANDATORY FOR CORE)<a class="headerlink" href="#see-also-mandatory-for-core" title="Link to this heading">#</a></h2>
+<p>Every core function must reference related functions.</p>
+<p>This ensures:</p>
+<ul class="simple">
+<li><p>Discoverability</p></li>
+<li><p>Navigation</p></li>
+<li><p>Cohesive API design</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="references-policy">
+<h2>References Policy<a class="headerlink" href="#references-policy" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use original papers when possible</p></li>
+<li><p>Use consistent format</p></li>
+<li><p>Avoid over-citation</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="anti-patterns-strictly-forbidden">
+<h2>Anti-Patterns (STRICTLY FORBIDDEN)<a class="headerlink" href="#anti-patterns-strictly-forbidden" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Mixing languages</p></li>
+<li><p>Unicode math instead of LaTeX</p></li>
+<li><p>Missing parameter descriptions</p></li>
+<li><p>Fake or incorrect examples</p></li>
+<li><p>Failure modes without mitigation</p></li>
+<li><p>Over-documenting trivial functions</p></li>
+<li><p>Adding custom top-level sections (breaks NumPyDoc)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ci-cd-integration">
+<h2>CI/CD Integration<a class="headerlink" href="#ci-cd-integration" title="Link to this heading">#</a></h2>
+<p>This standard is enforced through:</p>
+<ul class="simple">
+<li><p>Code review (PR)</p></li>
+<li><p>Sphinx build validation</p></li>
+<li><p>Doctest validation (<code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--doctest-modules</span></code>)</p></li>
+<li><p>Optional docstring linting</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="final-rule">
+<h2>Final Rule<a class="headerlink" href="#final-rule" title="Link to this heading">#</a></h2>
+<p>If a function implements theory:</p>
+<p>→ Document the theory
+→ Document when it fails
+→ Document how to handle failure</p>
+<p>If it does not:</p>
+<p>→ Keep it simple</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../api/generated/marchenko_pastur.visualization.plot_spectral_fit.plot_spectral_fit.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">marchenko_pastur.visualization.plot_spectral_fit.plot_spectral_fit</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="experiment_guidelines.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Experimentation Guidelines</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-principles">General Principles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language-convention">Language Convention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstring-standard-numpydoc">Docstring Standard (NumPyDoc)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-sections">Required Sections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-sections">Optional Sections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-documentation-philosophy">Scientific Documentation Philosophy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mandatory-conventions-sota">🔬 Mandatory Conventions (SOTA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-strings-required">1. Raw Strings (REQUIRED)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-rendering-required">2. Math Rendering (REQUIRED)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actionable-theory-critical">3. Actionable Theory (CRITICAL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-modes-with-mitigation-mandatory">4. Failure Modes with Mitigation (MANDATORY)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-examples-ci-cd-safe">5. Deterministic Examples (CI/CD SAFE)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-template-core-functions">📄 FULL TEMPLATE (CORE FUNCTIONS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-levels">Documentation Levels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-algorithms-max-detail">1. Core Algorithms (MAX DETAIL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#public-api-medium-detail">2. Public API (MEDIUM DETAIL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helpers-utilities-minimal">3. Helpers / Utilities (MINIMAL)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also-mandatory-for-core">🔗 See Also (MANDATORY FOR CORE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-policy">References Policy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-patterns-strictly-forbidden">Anti-Patterns (STRICTLY FORBIDDEN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-integration">CI/CD Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-rule">Final Rule</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/dev/docstring_guide.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

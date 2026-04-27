@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: marchenko-pastur
+Version: 0.1.0
+Summary: State-of-the-art Random Matrix Theory and Marchenko-Pastur spectrum analysis.
+Author-email: Roberto Daniel Sánchez <rdsanchez.econ@gmail.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.22.0
+Requires-Dist: scipy>=1.8.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: joblib>=1.1.0
+Provides-Extra: viz
+Requires-Dist: matplotlib>=3.5.0; extra == "viz"
+Provides-Extra: test
+Requires-Dist: pytest>=7.0.0; extra == "test"
+Requires-Dist: pytest-cov>=4.0.0; extra == "test"
+Provides-Extra: dev
+Requires-Dist: ruff>=0.3.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"

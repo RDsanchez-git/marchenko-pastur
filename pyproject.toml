@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marchenko-pastur"
+version = "0.1.0"
+description = "State-of-the-art Random Matrix Theory and Marchenko-Pastur spectrum analysis."
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Roberto Daniel Sánchez", email = "rdsanchez.econ@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "numpy>=1.22.0",
+    "scipy>=1.8.0",
+    "scikit-learn>=1.0.0",
+    "joblib>=1.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/tu-usuario/marchenko_pastur"
+Repository = "https://github.com/tu-usuario/marchenko_pastur.git"
+Documentation = "https://github.com/tu-usuario/marchenko_pastur/tree/main/docs"
+Issues = "https://github.com/tu-usuario/marchenko_pastur/issues"
+
+[project.optional-dependencies]
+viz = [
+    "matplotlib>=3.5.0",
+]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+dev = [
+    "ruff>=0.3.0",
+    "mypy>=1.0.0",
+]
+docs = [
+    "sphinx>=7.0.0",
+    "pydata-sphinx-theme>=0.14.0",
+    "numpydoc>=1.5.0",
+    "myst-parser>=2.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["marchenko_pastur*"]
+
+# ==========================================
+# TOOL CONFIGURATIONS (SOTA DOCTRINE)
+# ==========================================
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-ra -q --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "error::RuntimeWarning",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = [
+    "*.ipynb",
+    "experiments/*",
+    "notebooks/*"
+]
+
+[tool.ruff.lint]
+
+select = ["E", "F", "I", "W", "TID"]
+ignore = []
+
+[tool.ruff.lint.isort]
+
+known-first-party = ["marchenko_pastur"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+
+ban-relative-imports = "parents"

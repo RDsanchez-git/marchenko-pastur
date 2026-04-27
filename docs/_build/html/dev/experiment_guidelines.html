@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Experimentation Guidelines &#8212; marchenko_pastur v0.1.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dev/experiment_guidelines';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Docstring Standard" href="../contributing.html" />
+    <link rel="prev" title="Documentation Standards (Scientific Python)" href="docstring_guide.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">marchenko_pastur v0.1.0</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="docstring_guide.html">
+    Documentation Standards (Scientific Python)
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Experimentation Guidelines
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Docstring Standard
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="docstring_guide.html">
+    Documentation Standards (Scientific Python)
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Experimentation Guidelines
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Docstring Standard
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Experimentation Guidelines</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="experimentation-guidelines">
+<h1>Experimentation Guidelines<a class="headerlink" href="#experimentation-guidelines" title="Link to this heading">#</a></h1>
+<p>This document defines the <strong>official standards</strong> for designing, naming, and executing experiments in the project.</p>
+<p>The goal is to ensure:</p>
+<ul class="simple">
+<li><p>Reproducibility</p></li>
+<li><p>Traceability</p></li>
+<li><p>Scalability</p></li>
+<li><p>Zero contamination between research and production code</p></li>
+</ul>
+<p>However, it is natural that each experiment will require its own configuration or selection of sections to display
+(especially in .ipynb notebooks), so within this guide, you should select the sections to display that best convey
+the results of the experiments under test.</p>
+<p>There may be sections that were not taken into account; we are always open to recommendations.</p>
+</section>
+<hr class="docutils" />
+<section id="architectural-principle">
+<h1>🔵 1. ARCHITECTURAL PRINCIPLE<a class="headerlink" href="#architectural-principle" title="Link to this heading">#</a></h1>
+<section id="separation-of-concerns">
+<h2>Separation of Concerns<a class="headerlink" href="#separation-of-concerns" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Responsibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">src/</span></code></p></td>
+<td><p>Core library (production code)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tests/</span></code></p></td>
+<td><p>Deterministic validation (CI/CD)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">experiments/</span></code></p></td>
+<td><p>Research &amp; exploration (R&amp;D only)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="hard-rule">
+<h3>Hard Rule<a class="headerlink" href="#hard-rule" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">experiments/</span></code> <strong>must NOT import from <code class="docutils literal notranslate"><span class="pre">tests/</span></code></strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/</span></code> <strong>must NOT depend on <code class="docutils literal notranslate"><span class="pre">experiments/</span></code></strong></p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="directory-structure">
+<h1>🔵 2. DIRECTORY STRUCTURE<a class="headerlink" href="#directory-structure" title="Link to this heading">#</a></h1>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>experiments/
+├── scripts/
+│   └── EXP_XXX_*.py
+│
+└── notebooks/
+    └── EXP_XXX_*_report.ipynb
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="naming-convention-mandatory">
+<h1>🔵 3. NAMING CONVENTION (MANDATORY)<a class="headerlink" href="#naming-convention-mandatory" title="Link to this heading">#</a></h1>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXP_{ID}_{ENGINE}_{TOPIC}_{DETAIL}
+</pre></div>
+</div>
+</section>
+<section id="components">
+<h2>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h2>
+<section id="id-sequential">
+<h3>1. ID (Sequential)<a class="headerlink" href="#id-sequential" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXP_001
+EXP_014
+EXP_032
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Unique</p></li>
+<li><p>Never reused</p></li>
+<li><p>Acts as global anchor</p></li>
+</ul>
+</section>
+<section id="engine-system-component">
+<h3>2. ENGINE (System component)<a class="headerlink" href="#engine-system-component" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MP</p></td>
+<td><p>Marchenko-Pastur</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEF</p></td>
+<td><p>Defactored pipeline</p></td>
+</tr>
+<tr class="row-even"><td><p>TYL</p></td>
+<td><p>Tyler estimator</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIPE</p></td>
+<td><p>Full pipeline</p></td>
+</tr>
+<tr class="row-even"><td><p>PLOT</p></td>
+<td><p>Visualization</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="topic-phenomenon">
+<h3>3. TOPIC (Phenomenon)<a class="headerlink" href="#topic-phenomenon" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>H0
+SPECTRUM
+SPIKES
+SIGMA
+THRESHOLD
+STABILITY
+</pre></div>
+</div>
+</section>
+<section id="detail-optional-but-recommended">
+<h3>4. DETAIL (Optional but recommended)<a class="headerlink" href="#detail-optional-but-recommended" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MONTECARLO
+FINITE_SAMPLE
+HIGH_DIM
+COMPARISON
+HEAVY_TAILS
+</pre></div>
+</div>
+</section>
+</section>
+<section id="valid-examples">
+<h2>✅ Valid Examples<a class="headerlink" href="#valid-examples" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXP_001_MP_H0_MONTECARLO
+EXP_014_TYL_SPECTRUM_COMPARISON
+EXP_017_DEF_STABILITY_HIGH_DIM
+</pre></div>
+</div>
+</section>
+<section id="invalid-examples">
+<h2>❌ Invalid Examples<a class="headerlink" href="#invalid-examples" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>test.py
+experiment_final.py
+analysis_new.py
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="naming-consistency-rule">
+<h1>🔵 Naming Consistency Rule<a class="headerlink" href="#naming-consistency-rule" title="Link to this heading">#</a></h1>
+<p>Script:
+EXP_001_MP_H0_MONTECARLO.py</p>
+<p>Notebook:
+EXP_001_MP_H0_MONTECARLO_report.ipynb</p>
+</section>
+<section id="function-naming-mandatory">
+<h1>🔵 3.1 FUNCTION NAMING (MANDATORY)<a class="headerlink" href="#function-naming-mandatory" title="Link to this heading">#</a></h1>
+<p>The main function inside each experiment script must match the file name.</p>
+<section id="rule">
+<h2>Rule<a class="headerlink" href="#rule" title="Link to this heading">#</a></h2>
+<p>File:
+EXP_001_MP_H0_MONTECARLO.py</p>
+<p>Function:
+exp_001_mp_h0_montecarlo()</p>
+</section>
+<section id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Must be lowercase</p></li>
+<li><p>Must match file name exactly</p></li>
+<li><p>Must be the primary entry point of the experiment</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="script-template-mandatory">
+<h1>🔵 4. SCRIPT TEMPLATE (MANDATORY)<a class="headerlink" href="#script-template-mandatory" title="Link to this heading">#</a></h1>
+<p>📁 <code class="docutils literal notranslate"><span class="pre">experiments/scripts/EXP_XXX_*.py</span></code></p>
+<section id="rules">
+<h2>Rules<a class="headerlink" href="#rules" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pure computation ONLY</p></li>
+<li><p>No plotting</p></li>
+<li><p>No UI logic</p></li>
+<li><p>Deterministic output</p></li>
+<li><p>Structured return</p></li>
+</ul>
+</section>
+<section id="standard-contract">
+<h2>Standard Contract<a class="headerlink" href="#standard-contract" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
+    <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="template">
+<h2>Template<a class="headerlink" href="#template" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib.metadata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">marchenko_pastur.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_mp</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">EXPERIMENT {ID}: {TITLE}</span>
+<span class="sd">---------------------------------------------</span>
+
+<span class="sd">Objective:</span>
+<span class="sd">---------</span>
+<span class="sd">Describe what is being tested.</span>
+
+<span class="sd">Methodology:</span>
+<span class="sd">------------</span>
+<span class="sd">Explain how the experiment is constructed.</span>
+
+<span class="sd">Key Findings:</span>
+<span class="sd">-------------</span>
+<span class="sd">Summarize expected or validated results.</span>
+
+<span class="sd">Interpretation:</span>
+<span class="sd">---------------</span>
+<span class="sd">Explain why the result matters theoretically.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">exp_id_engine_topic_detail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Executes the experiment pipeline and aggregates the metrics.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        Number of observations.</span>
+<span class="sd">    p : int</span>
+<span class="sd">        Number of features.</span>
+<span class="sd">    M : int</span>
+<span class="sd">        Number of Monte Carlo iterations.</span>
+<span class="sd">    seed : int</span>
+<span class="sd">        Random seed for reproducibility.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Structured output containing:</span>
+<span class="sd">        - &#39;results&#39;: Computed metrics and statistical aggregations.</span>
+<span class="sd">        - &#39;meta&#39;: Traceability configuration and model version.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">model_version</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;marchenko_pastur&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">PackageNotFoundError</span><span class="p">:</span>
+        <span class="n">model_version</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">metrics</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">run_mp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">metrics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">k_effective</span><span class="p">)</span>
+    
+    <span class="n">elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;mean_metric&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">)),</span>
+            <span class="s2">&quot;std_metric&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">metrics</span><span class="p">)),</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span>
+            <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+            <span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="n">M</span><span class="p">,</span>
+            <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="n">seed</span><span class="p">,</span>
+            <span class="s2">&quot;execution_time_seconds&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">elapsed</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="s2">&quot;model_version&quot;</span><span class="p">:</span> <span class="n">model_version</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="notebook-template-mandatory">
+<h1>🔵 5. NOTEBOOK TEMPLATE (MANDATORY)<a class="headerlink" href="#notebook-template-mandatory" title="Link to this heading">#</a></h1>
+<p>📁 <code class="docutils literal notranslate"><span class="pre">experiments/notebooks/EXP_XXX_*_report.ipynb</span></code></p>
+<section id="cell-1-environment-setup">
+<h2>Cell 1 — Environment Setup<a class="headerlink" href="#cell-1-environment-setup" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># ENVIRONMENT SETUP</span>
+<span class="c1"># ==========================================</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
+<span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_project_root</span><span class="p">(</span><span class="n">markers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="s2">&quot;pyproject.toml&quot;</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">)):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">parent</span> <span class="ow">in</span> <span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">parents</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">((</span><span class="n">parent</span> <span class="o">/</span> <span class="n">marker</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">markers</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">parent</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Project root not found.&quot;</span><span class="p">)</span>
+
+<span class="n">project_root</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">find_project_root</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="n">project_root</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">project_root</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-2-import-experiment">
+<h2>Cell 2 — Import Experiment<a class="headerlink" href="#cell-2-import-experiment" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># IMPORTS</span>
+<span class="c1"># ==========================================</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">experiments.scripts.EXP_XXX</span><span class="w"> </span><span class="kn">import</span> <span class="n">exp_id_engine_topic_detail</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-3-configuration">
+<h2>Cell 3 — Configuration<a class="headerlink" href="#cell-3-configuration" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># CONFIGURATION</span>
+<span class="c1"># ==========================================</span>
+<span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-4-execution">
+<h2>Cell 4 — Execution<a class="headerlink" href="#cell-4-execution" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># RUN EXPERIMENT</span>
+<span class="c1"># ==========================================</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">exp_id_engine_topic_detail</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">]</span>
+<span class="n">meta</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-5-results">
+<h2>Cell 5 — Results<a class="headerlink" href="#cell-5-results" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># RESULTS</span>
+<span class="c1"># ==========================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== RESULTS ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-6-metadata">
+<h2>Cell 6 — Metadata<a class="headerlink" href="#cell-6-metadata" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># METADATA</span>
+<span class="c1"># ==========================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== META ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">meta</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-7-interpretation-required">
+<h2>Cell 7 — Interpretation (REQUIRED)<a class="headerlink" href="#cell-7-interpretation-required" title="Link to this heading">#</a></h2>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">Interpretation:</span>
+<span class="gu">---------------</span>
+Provide a high-level scientific synthesis of the empirical findings. Do not merely 
+restate the metrics; explain their theoretical and architectural implications. 
+
+Construct a cohesive narrative addressing the following dimensions:
+<span class="k">1.</span> Theoretical Alignment: Convergence or divergence from baseline RMT expectations.
+<span class="k">2.</span> Finite-Sample Mechanics: Presence of empirical bias, spectral leakage, or structural deformation.
+<span class="k">3.</span> Pipeline Justification: How this specific result validates or restricts the current algorithmic design 
+   in production.
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="optional-table-representation">
+<h2>🔵 5.1 OPTIONAL — TABLE REPRESENTATION<a class="headerlink" href="#optional-table-representation" title="Link to this heading">#</a></h2>
+<p>Use this when comparing multiple configurations or regimes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># DIAGNOSTICS / TABLE</span>
+<span class="c1"># ==========================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">results</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Use Cases:</p>
+<ul class="simple">
+<li><p>Monte Carlo summaries</p></li>
+<li><p>Parameter sweeps (n, p, q)</p></li>
+<li><p>Model comparisons</p></li>
+</ul>
+</section>
+<section id="optional-visualization">
+<h2>🔵 5.2 OPTIONAL — VISUALIZATION<a class="headerlink" href="#optional-visualization" title="Link to this heading">#</a></h2>
+<p>ONLY in notebooks — NEVER in scripts</p>
+<ul class="simple">
+<li><p>Example: Line Plot (e.g., Phase Transition)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># VISUALIZATION</span>
+<span class="c1"># ==========================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Experiment Visualization&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Example: Histogram (Eigenvalues / Spectrum)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Spectral Distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>When to Use Plots</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Plot Needed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Monte Carlo summary</p></td>
+<td><p>❌ Optional</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scalar metrics</p></td>
+<td><p>❌ No</p></td>
+</tr>
+<tr class="row-even"><td><p>Spectrum analysis</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase transitions (BBP)</p></td>
+<td><p>✅ Critical</p></td>
+</tr>
+<tr class="row-even"><td><p>Model comparison</p></td>
+<td><p>✅ Recommended</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="optional-save-outputs">
+<h2>🔵 5.3 OPTIONAL — SAVE OUTPUTS<a class="headerlink" href="#optional-save-outputs" title="Link to this heading">#</a></h2>
+<p>Use only if results need persistence. Leverage <code class="docutils literal notranslate"><span class="pre">project_root</span></code> to ensure paths are absolute and indestructible.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================================</span>
+<span class="c1"># SAVE OUTPUTS</span>
+<span class="c1"># ==========================================</span>
+<span class="c1"># Create absolute path using the root anchor</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">project_root</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;experiments&quot;</span> <span class="o">/</span> <span class="s2">&quot;outputs&quot;</span>
+<span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Failsafe</span>
+
+<span class="c1"># Save plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;EXP_XXX_plot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Save data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;EXP_XXX_results.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Output Directory Convention</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>experiments/
+├── scripts/
+├── notebooks/
+└── outputs/
+    └── EXP_XXX_*.png / .csv
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Outputs are optional artifacts</p></li>
+<li><p>Do NOT commit large outputs to git</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> for heavy files</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="final-rule">
+<h1>FINAL RULE<a class="headerlink" href="#final-rule" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Scripts generate truth.<br />
+Notebooks explain truth.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Scripts → numbers</p></li>
+<li><p>Notebooks → insight</p></li>
+<li><p>Outputs → optional artifacts</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="root-path-resolution-sota">
+<h1>🔵 6. ROOT PATH RESOLUTION (SOTA)<a class="headerlink" href="#root-path-resolution-sota" title="Link to this heading">#</a></h1>
+<section id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">experiments/</span></code> is NOT an installed package.</p>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>Dynamic root detection using <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_project_root</span><span class="p">(</span><span class="n">markers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="s2">&quot;pyproject.toml&quot;</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">)):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">parent</span> <span class="ow">in</span> <span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">parents</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">((</span><span class="n">parent</span> <span class="o">/</span> <span class="n">marker</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">markers</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">parent</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Project root not found.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="forbidden">
+<h2>❌ Forbidden<a class="headerlink" href="#forbidden" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="design-principles">
+<h1>🔵 7. DESIGN PRINCIPLES<a class="headerlink" href="#design-principles" title="Link to this heading">#</a></h1>
+<section id="reproducibility">
+<h2>1. Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Always include <code class="docutils literal notranslate"><span class="pre">seed</span></code></p></li>
+<li><p>Always include <code class="docutils literal notranslate"><span class="pre">model_version</span></code></p></li>
+</ul>
+</section>
+<section id="determinism">
+<h2>2. Determinism<a class="headerlink" href="#determinism" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Same inputs → same outputs</p></li>
+</ul>
+</section>
+<section id="traceability">
+<h2>3. Traceability<a class="headerlink" href="#traceability" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Separate clearly: <code class="docutils literal notranslate"><span class="pre">results</span></code> and <code class="docutils literal notranslate"><span class="pre">meta</span></code></p></li>
+</ul>
+</section>
+<section id="no-hidden-state">
+<h2>4. No Hidden State<a class="headerlink" href="#no-hidden-state" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>No global mutable variables</p></li>
+<li><p>No implicit randomness</p></li>
+</ul>
+</section>
+<section id="one-experiment-one-hypothesis">
+<h2>5. One Experiment = One Hypothesis<a class="headerlink" href="#one-experiment-one-hypothesis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Avoid mixing multiple objectives in a single script.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="anti-patterns-strictly-forbidden">
+<h1>🔵 8. ANTI-PATTERNS (STRICTLY FORBIDDEN)<a class="headerlink" href="#anti-patterns-strictly-forbidden" title="Link to this heading">#</a></h1>
+<section id="mixing-ui-with-computation">
+<h2>❌ Mixing UI with computation<a class="headerlink" href="#mixing-ui-with-computation" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="returning-raw-objects">
+<h2>❌ Returning raw objects<a class="headerlink" href="#returning-raw-objects" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</section>
+<section id="hardcoded-globals">
+<h2>❌ Hardcoded globals<a class="headerlink" href="#hardcoded-globals" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+</pre></div>
+</div>
+</section>
+<section id="importing-from-tests">
+<h2>❌ Importing from tests<a class="headerlink" href="#importing-from-tests" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tests.utils</span><span class="w"> </span><span class="kn">import</span> <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="future-extensions">
+<h1>🔵 9. FUTURE EXTENSIONS<a class="headerlink" href="#future-extensions" title="Link to this heading">#</a></h1>
+<p>When scaling:</p>
+<ul class="simple">
+<li><p>JSON logging</p></li>
+<li><p>CSV aggregation</p></li>
+<li><p>Experiment registry</p></li>
+<li><p>Dashboard (Streamlit)</p></li>
+<li><p>Lightweight tracking system</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="final-principle">
+<h1>🏁 FINAL PRINCIPLE<a class="headerlink" href="#final-principle" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Experiments are not scripts — they are scientific assets.</p>
+</div></blockquote>
+<p>They must be:</p>
+<ul class="simple">
+<li><p>Reproducible</p></li>
+<li><p>Auditable</p></li>
+<li><p>Comparable</p></li>
+<li><p>Stable over time</p></li>
+</ul>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="docstring_guide.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Documentation Standards (Scientific Python)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../contributing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Docstring Standard</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Experimentation Guidelines</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-principle">🔵 1. ARCHITECTURAL PRINCIPLE</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-concerns">Separation of Concerns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hard-rule">Hard Rule</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">🔵 2. DIRECTORY STRUCTURE</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention-mandatory">🔵 3. NAMING CONVENTION (MANDATORY)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id-sequential">1. ID (Sequential)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#engine-system-component">2. ENGINE (System component)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-phenomenon">3. TOPIC (Phenomenon)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detail-optional-but-recommended">4. DETAIL (Optional but recommended)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valid-examples">✅ Valid Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invalid-examples">❌ Invalid Examples</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-consistency-rule">🔵 Naming Consistency Rule</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-naming-mandatory">🔵 3.1 FUNCTION NAMING (MANDATORY)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rule">Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#script-template-mandatory">🔵 4. SCRIPT TEMPLATE (MANDATORY)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules">Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-contract">Standard Contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template">Template</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-template-mandatory">🔵 5. NOTEBOOK TEMPLATE (MANDATORY)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-1-environment-setup">Cell 1 — Environment Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-2-import-experiment">Cell 2 — Import Experiment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-3-configuration">Cell 3 — Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-4-execution">Cell 4 — Execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-5-results">Cell 5 — Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-6-metadata">Cell 6 — Metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-7-interpretation-required">Cell 7 — Interpretation (REQUIRED)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-table-representation">🔵 5.1 OPTIONAL — TABLE REPRESENTATION</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-visualization">🔵 5.2 OPTIONAL — VISUALIZATION</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-save-outputs">🔵 5.3 OPTIONAL — SAVE OUTPUTS</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-rule">FINAL RULE</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#root-path-resolution-sota">🔵 6. ROOT PATH RESOLUTION (SOTA)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forbidden">❌ Forbidden</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#design-principles">🔵 7. DESIGN PRINCIPLES</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility">1. Reproducibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism">2. Determinism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traceability">3. Traceability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-hidden-state">4. No Hidden State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-experiment-one-hypothesis">5. One Experiment = One Hypothesis</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-patterns-strictly-forbidden">🔵 8. ANTI-PATTERNS (STRICTLY FORBIDDEN)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-ui-with-computation">❌ Mixing UI with computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-raw-objects">❌ Returning raw objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardcoded-globals">❌ Hardcoded globals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-from-tests">❌ Importing from tests</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#future-extensions">🔵 9. FUTURE EXTENSIONS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-principle">🏁 FINAL PRINCIPLE</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/dev/experiment_guidelines.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
